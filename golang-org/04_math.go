@@ -6,8 +6,6 @@ import (
 )
 
 func main()  {
-  fmt.Printf("Now you have %g problems.", math.Sqrt(7))
-  fmt.Println()
-  fmt.Printf("Pi is %g", math.Pi)
-  fmt.Println()
+  fmt.Printf("Now you have %g problems.\n", math.Sqrt(7))
+  fmt.Printf("Pi is %g\n", math.Pi)
 }
