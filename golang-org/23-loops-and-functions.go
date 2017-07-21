@@ -8,8 +8,8 @@ import (
 func Sqrt(x float64) float64 {
   z := x
   for y := 10; y > 0; y-- {
-    top := float64(math.Pow(z, 2) - x)
-    bottom := float64(2 * z)
+    top := math.Pow(z, 2) - x
+    bottom := 2 * z
     // fmt.Println("top is: ", top)
     // fmt.Println("bottom is: ", bottom)
     z = z - top/bottom
