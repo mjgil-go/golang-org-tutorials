@@ -4,7 +4,7 @@ package main
 // need to run on the website to see image
 // https://tour.golang.org/moretypes/18
 import (
-  "golang.org/x/tour/pic"
+  "fmt"
 )
 
 func Pic(dx, dy int) [][]uint8 {
@@ -21,7 +21,23 @@ func Pic(dx, dy int) [][]uint8 {
   return returnVal
 }
 
+
+func Pic2(dx, dy int) [][]uint8 {
+  returnVal := make([][]uint8, dy)
+  for j := range returnVal {
+    xArray := make([]uint8, dx)
+    for i := range xArray {
+      xArray[i] = uint8(i*j)
+      // xArray[i] = uint8(i^j)
+      // xArray[i] = uint8((i+j)/2))
+    }
+    returnVal[j] = xArray
+  }
+  return returnVal
+}
+
 func main() {
-  pic.Show(Pic)
-  // fmt.Println(Pic(5, 3))
+  // pic.Show(Pic2)
+  fmt.Println(Pic(5, 3))
+  fmt.Println(Pic2(5, 3))
 }
